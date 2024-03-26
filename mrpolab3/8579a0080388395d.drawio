@@ -1,0 +1,205 @@
+<mxfile host="app.diagrams.net" modified="2024-03-26T05:56:46.115Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Z8_uIJEwc9l__sQ3mBE3" version="23.1.5" type="device">
+  <diagram name="Страница — 1" id="s1OJ_6-K4Mqk_3KUUfSB">
+    <mxGraphModel dx="2501" dy="758" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-1" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Клиент может оформлять заказы&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="50" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-2" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Курьер может брать заказы&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="50" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Курьер может отмечать время доставки заказа&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="50" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Клиент может оставить комментарий&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="930" y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-5" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Если доставка опоздала - цена снижается вдвое&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1225" y="60" width="160" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-7" target="ynZAN_ZrzTMjbrC64j56-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-7" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-8" target="ynZAN_ZrzTMjbrC64j56-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-8" value="Формирование состава заказа" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-9" target="ynZAN_ZrzTMjbrC64j56-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-9" value="Добавление заказа в репозиторий" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-10" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-65" y="600" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-14" target="ynZAN_ZrzTMjbrC64j56-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-14" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-15" target="ynZAN_ZrzTMjbrC64j56-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-15" value="Выбор заказа" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-18" target="ynZAN_ZrzTMjbrC64j56-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-25" value="Да" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-21">
+          <mxGeometry x="-0.2129" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-18" value="У него нет курьера?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="245" y="450" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-19" target="ynZAN_ZrzTMjbrC64j56-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-19" value="Добавление курьера" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-20" target="ynZAN_ZrzTMjbrC64j56-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-20" value="Курьер не изменяется" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-18" target="ynZAN_ZrzTMjbrC64j56-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-26" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-22">
+          <mxGeometry x="-0.4483" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-27" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="690" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-31" target="ynZAN_ZrzTMjbrC64j56-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-31" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-33" target="ynZAN_ZrzTMjbrC64j56-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-33" value="Выбор заказа" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-36" target="ynZAN_ZrzTMjbrC64j56-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-35" value="Да" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-34">
+          <mxGeometry x="-0.2129" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-36" value="У него нет курьера?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="655" y="450" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-38" target="ynZAN_ZrzTMjbrC64j56-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-38" value="Добавление курьера" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-40" target="ynZAN_ZrzTMjbrC64j56-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-40" value="Курьер не изменяется" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-36" target="ynZAN_ZrzTMjbrC64j56-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-42" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-41">
+          <mxGeometry x="-0.4483" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-43" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="690" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-45" target="ynZAN_ZrzTMjbrC64j56-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-45" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-47" target="ynZAN_ZrzTMjbrC64j56-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-47" value="Формирование комментария&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-49" target="ynZAN_ZrzTMjbrC64j56-50">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-49" value="Добавление комментария в репозиторий" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-50" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="590" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-52" target="ynZAN_ZrzTMjbrC64j56-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-52" value="Начало" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-54" target="ynZAN_ZrzTMjbrC64j56-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-54" value="Заказ доставлен" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-57" target="ynZAN_ZrzTMjbrC64j56-59">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-56" value="Да" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-55">
+          <mxGeometry x="-0.2129" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-57" value="Опоздал на 2 часа?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1257.5" y="430" width="95" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-59" target="ynZAN_ZrzTMjbrC64j56-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-59" value="Цена делится на 2" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-61" target="ynZAN_ZrzTMjbrC64j56-64">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-61" value="Цена не изменяется" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="550" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ynZAN_ZrzTMjbrC64j56-57" target="ynZAN_ZrzTMjbrC64j56-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-63" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ynZAN_ZrzTMjbrC64j56-62">
+          <mxGeometry x="-0.4483" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ynZAN_ZrzTMjbrC64j56-64" value="Конец" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="680" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
