@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import List, Union, Optional
 from datetime import datetime
 from dataclasses import dataclass
@@ -17,25 +18,28 @@ class BurgerSet:
 
 
 class Courier:
-    def __init__(self, id, name):
+    def __init__(self, id, name, orders: List[Order]):
         self.id = id
         self.name = name
+        self.orders = orders
 
     def __eq__(self, other):
-        if isinstance(self, other):
-            return self.id == self.id
+        if isinstance(other, type(self)):
+            return self.id == other.id and self.name == other.name
         return False
 
 
 class Client:
-    def __init__(self, id, name, phone):
+    def __init__(self, id, name, phone, orders: List[Order], comments: List[Comment]):
         self.id = id
         self.name = name
         self.phone = phone
+        self.orders = orders
+        self.comments = comments
 
     def __eq__(self, other):
-        if isinstance(self, other):
-            return self.id == self.id
+        if isinstance(other, type(self)):
+            return self.id == other.id and self.name == other.name
         return False
 
 
@@ -52,8 +56,8 @@ class Order:
         self.price = price
 
     def __eq__(self, other):
-        if isinstance(self, other):
-            return self.id == self.id and self.client == self.client
+        if isinstance(other, type(self)):
+            return self.id == other.id and self.client == other.client
         return False
 
 
