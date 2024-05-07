@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Root>
+  <Burger id="339bb580-627f-4f57-b599-f53f73518d69" name="Classic Burger"/>
+  <Burger id="339bb580-627f-4f57-b599-f53f73518d69" name="Veggie Burger"/>
+  <BurgerSet id="bd1ef086-e9fa-4da0-b5b3-2c0e05c10d5e" name="Family Pack">
+    <Burger ref="339bb580-627f-4f57-b599-f53f73518d69"/>
+    <Burger ref="339bb580-627f-4f57-b599-f53f73518d69"/>
+  </BurgerSet>
+  <Client id="d8d74d16-e9e1-470c-9883-11f423df73a6" name="Alice" phone="1234567890">
+    <Order ref="a9d2a659-fff3-4631-b3b4-f67eeb8c5028"/>
+    <Comment ref="ea5261ed-deca-4ed5-8b94-a2baa00c9126"/>
+  </Client>
+  <Client id="08719402-e13d-4379-bda7-1da9b1d07e95" name="Bob" phone="0987654321">
+    <Comment ref="ea5261ed-deca-4ed5-8b94-a2baa00c9126"/>
+  </Client>
+  <ID>ea5261ed-deca-4ed5-8b94-a2baa00c9126</ID>
+  <ID>ea5261ed-deca-4ed5-8b94-a2baa00c9126</ID>
+  <Order id="a9d2a659-fff3-4631-b3b4-f67eeb8c5028">
+    <Client ref="d8d74d16-e9e1-470c-9883-11f423df73a6"/>
+    <CreationTime>2024-04-09T13:42:23.261221</CreationTime>
+    <DeliveryAddress>123 Main Street</DeliveryAddress>
+    <Items>
+      <BurgerSet ref="bd1ef086-e9fa-4da0-b5b3-2c0e05c10d5e"/>
+    </Items>
+    <Price>29.99</Price>
+  </Order>
+  <Courier id="603d6cd0-8e7f-456b-84f5-7fdd1547bf22" name="Dave">
+    <Order ref="a9d2a659-fff3-4631-b3b4-f67eeb8c5028"/>
+  </Courier>
+</Root>
