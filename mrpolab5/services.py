@@ -4,8 +4,7 @@ from classes import *
 
 class BusinessRules:
     def make_order(self, user: Client, delivery_address, items):
-        order = Order(len(user.orders) + 1,
-                      user,
+        order = Order(user,
                       datetime.now(),
                       None,
                       delivery_address,
@@ -28,11 +27,10 @@ class BusinessRules:
         return False
 
     def leave_comment(self, order: Order,  user: Client, comment_text):
-        comment = Comment(len(user.comments),
-                          comment_text, user,
+        comment = Comment(comment_text, user,
                           order)
         return comment
 
     def check_delivery_time(self, order: Order):
-        if order.delivery_time and (abs(order.delivery_time - order.creation_time) > timedelta(hours=2)):
+        if order.delivery_time and order.creation_time and (abs(order.delivery_time - order.creation_time) > timedelta(hours=2)):
             order.price = order.price // 2

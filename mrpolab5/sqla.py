@@ -62,7 +62,8 @@ class Order(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     creation_time = Column(DateTime)
     delivery_time = Column(DateTime)
-    delivery_address = Column(DateTime)
+    delivery_address = Column(String)
+    price = Column(Integer)
     courier_id = Column(Integer, ForeignKey('couriers.id'))
     client_id = Column(Integer, ForeignKey('clients.id'))
     comment_id = Column(Integer, ForeignKey('comments.id'))
@@ -100,10 +101,10 @@ class Comment(Base):
 
 
 #engine = create_engine('sqlite:///example.db', echo=True)
-engine = create_engine('sqlite:///:memory:')
+'''engine = create_engine('sqlite:///:memory:')
 Base.metadata.create_all(engine)
 
-session = sessionmaker(bind=engine)()
+session = sessionmaker(bind=engine)()'''
 
 
 class AbstractRepository(ABC):
@@ -165,7 +166,7 @@ class SQLAlchemyRepository(AbstractRepository):
         return False
 
 
-burger_repository = SQLAlchemyRepository(session, Burger)
+'''burger_repository = SQLAlchemyRepository(session, Burger)
 order_repository = SQLAlchemyRepository(session, Order)
 
 new_burger = Burger(name='Cheeseburger')
@@ -196,4 +197,4 @@ print(new_order.burgers)
 print(all_burgers)
 print(order_repository.list())
 
-session.close()
+session.close()'''

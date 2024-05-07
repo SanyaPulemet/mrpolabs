@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime
 from uuid import uuid4, UUID
 from dateutil import parser
-from dataclasses import is_dataclass, replace, fields
+#from dataclasses import is_dataclass, replace, fields
 
 # junk code
 '''# region Write funcs
@@ -317,7 +317,7 @@ def create_entity_from_xml(xml_element, class_registry, conversion_registry):
     entity_data = {}
     for child in xml_element:
         if child.tag in conversion_registry:
-            # функция преобразования для уникальных полей
+            # функция преобразования для уникальных(должных к обработке) полей
             converted_value = conversion_registry[child.tag](child.text)
             entity_data[child.tag] = converted_value
         else:
