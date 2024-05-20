@@ -34,3 +34,5 @@ class BusinessRules:
     def check_delivery_time(self, order: Order):
         if order.delivery_time and order.creation_time and (abs(order.delivery_time - order.creation_time) > timedelta(hours=2)):
             order.price = order.price // 2
+            return True
+        return False

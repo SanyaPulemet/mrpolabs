@@ -363,7 +363,7 @@ def create_entities_dict_from_xml():
 
     return entities
 
-entities = create_entities_dict_from_xml()
+# entities = create_entities_dict_from_xml()
 
 
 def print_entities_with_uuid(entity_dict):
@@ -378,7 +378,7 @@ def print_entities_with_uuid(entity_dict):
             print(f"  Field Name: {field_name}, Field Value: {field_value}, Field Type: {field_type}")
 
 
-print_entities_with_uuid(entities)
+# print_entities_with_uuid(entities)
 
 
 '''entities = [create_entity_from_xml(child, class_registry, conversion_registry) for child in root]
