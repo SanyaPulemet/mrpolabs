@@ -6,6 +6,10 @@ name = "pypi"
 [packages]
 python-dateutil = "*"
 sqlalchemy = "*"
+fastapi = "*"
+aiomysql = "*"
+hypercorn = "*"
+alembic = "*"
 
 [dev-packages]
 

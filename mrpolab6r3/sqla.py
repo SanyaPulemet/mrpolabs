@@ -1,6 +1,8 @@
 from sqlalchemy import create_engine, Column, String, ForeignKey, Integer, DateTime
 from sqlalchemy.orm import relationship, declarative_base, sessionmaker, Session
-from abc import ABC, abstractmethod
+from typing import Dict, Any
+from datetime import *
+from decimal import Decimal
 
 
 # это было ошибкой не раскидать файлы по папкам >~<
@@ -9,24 +11,24 @@ from abc import ABC, abstractmethod
 Base = declarative_base()
 
 
-class Burger(Base):
+class BurgerDB(Base):
     __tablename__ = 'burgers'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
 
-    burger_sets = relationship("BurgerSet", secondary="burger_set_association",back_populates="burgers")
-    orders = relationship("Order", secondary='order_burger_association', back_populates="burgers")
+    burger_sets = relationship("BurgerSetDB", secondary="burger_set_association",back_populates="burgers")
+    orders = relationship("OrderDB", secondary='order_burger_association', back_populates="burgers")
 
 
-class BurgerSet(Base):
+class BurgerSetDB(Base):
     __tablename__ = 'burger_sets'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
 
-    burgers = relationship("Burger", secondary="burger_set_association", back_populates="burger_sets")
-    orders = relationship("Order", secondary='order_burgerset_association', back_populates="burgersets")
+    burgers = relationship("BurgerDB", secondary="burger_set_association", back_populates="burger_sets")
+    orders = relationship("OrderDB", secondary='order_burgerset_association', back_populates="burgersets")
 
 
 class BurgerSetAssociation(Base):
@@ -36,43 +38,77 @@ class BurgerSetAssociation(Base):
     burger_set_id = Column(Integer, ForeignKey('burger_sets.id'), primary_key=True)
 
 
-class Courier(Base):
+class CourierDB(Base):
     __tablename__ = 'couriers'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String, nullable=False)
+    name = Column(String(255), nullable=False)
 
-    orders = relationship("Order", back_populates="courier")
+    orders = relationship("OrderDB", back_populates="courier_r")
+
+    @property
+    def JSONify(self):
+        dictionary = {
+            'id': self.id,
+            'name': self.name,
+            }
+
+        return toJSONable(dictionary)
 
 
-class Client(Base):
+class ClientDB(Base):
     __tablename__ = 'clients'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String)
-    phone = Column(String)
+    name = Column(String(255))
+    phone = Column(String(255))
 
-    orders = relationship("Order", back_populates="client")
-    comments = relationship("Comment", back_populates="client")
+    orders = relationship("OrderDB", back_populates="client_r")
+    comments = relationship("CommentDB", back_populates="client_r")
+
+    @property
+    def JSONify(self):
+        dictionary = {
+            'id': self.id,
+            'name': self.name,
+            'phone': self.phone,
+            }
+
+        return toJSONable(dictionary)
 
 
-class Order(Base):
+class OrderDB(Base):
     __tablename__ = 'orders'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     creation_time = Column(DateTime)
     delivery_time = Column(DateTime)
-    delivery_address = Column(String)
+    delivery_address = Column(String(255))
     price = Column(Integer)
-    courier_id = Column(Integer, ForeignKey('couriers.id'))
-    client_id = Column(Integer, ForeignKey('clients.id'))
-    comment_id = Column(Integer, ForeignKey('comments.id'))
+    courier = Column(Integer, ForeignKey('couriers.id'))
+    client = Column(Integer, ForeignKey('clients.id'))
+    comment = Column(Integer, ForeignKey('comments.id'))
 
-    courier = relationship("Courier", back_populates="orders")
-    client = relationship("Client", back_populates="orders")
-    comment = relationship("Comment", back_populates="order")
-    burgers = relationship("Burger", secondary='order_burger_association', back_populates="orders")
-    burgersets = relationship("BurgerSet", secondary='order_burgerset_association', back_populates="orders")
+    courier_r = relationship("CourierDB", back_populates="orders")
+    client_r = relationship("ClientDB", back_populates="orders")
+    comment_r = relationship("CommentDB", back_populates="order")
+    burgers = relationship("BurgerDB", secondary='order_burger_association', back_populates="orders")
+    burgersets = relationship("BurgerSetDB", secondary='order_burgerset_association', back_populates="orders")
+
+    @property
+    def JSONify(self):
+        dictionary = {
+            'id': self.id,
+            'creation_time': self.creation_time,
+            'delivery_time': self.delivery_time,
+            'delivery_address': self.delivery_address,
+            'price': self.price,
+            'courier': self.courier,
+            'client': self.client,
+            'comment': self.comment,
+            }
+
+        return toJSONable(dictionary)
 
 
 class OrderBurgerAssociation(Base):
@@ -89,15 +125,25 @@ class OrderBurgerSetAssociation(Base):
     burgerset_id = Column(Integer, ForeignKey('burger_sets.id'), primary_key=True)
 
 
-class Comment(Base):
+class CommentDB(Base):
     __tablename__ = 'comments'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    text = Column(String)
-    client_id = Column(Integer, ForeignKey('clients.id'))
+    text = Column(String(255))
+    client = Column(Integer, ForeignKey('clients.id'))
 
-    order = relationship("Order", back_populates="comment")
-    client = relationship("Client", back_populates="comments")
+    order = relationship("OrderDB", back_populates="comment_r")
+    client_r = relationship("ClientDB", back_populates="comments")
+
+    @property
+    def JSONify(self):
+        dictionary = {
+            'id': self.id,
+            'text': self.text,
+            'client': self.client,
+        }
+
+        return toJSONable(dictionary)
 
 
 #engine = create_engine('sqlite:///example.db', echo=True)
@@ -106,71 +152,16 @@ Base.metadata.create_all(engine)
 
 session = sessionmaker(bind=engine)()'''
 
+'''
+engine = create_engine('sqlite:///:memory:')
+Base.metadata.create_all(engine)
+session = sessionmaker(bind=engine)()
 
-class AbstractRepository(ABC):
+burger_repository = SQLAlchemyRepository(session, BurgerDB)
+order_repository = SQLAlchemyRepository(session, OrderDB)
 
-    @abstractmethod
-    def create(self, entity):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def get(self, id):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def list(self):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def update(self, entity):
-        raise NotImplementedError()
-
-    @abstractmethod
-    def delete(self, entity):
-        raise NotImplementedError()
-
-
-class SQLAlchemyRepository(AbstractRepository):
-
-    def __init__(self, session: Session, model_class):
-        self.session = session
-        self.model_class = model_class
-
-    def create(self, entity):
-        self.session.add(entity)
-        self.session.commit()
-        return entity
-
-    def get(self, id):
-        return self.session.query(self.model_class).filter_by(id=id).one_or_none()
-
-    def list(self):
-        query = self.session.query(self.model_class)
-        return query.all()
-
-    def update(self, entity):
-        obj = self.get(entity.id)
-        if obj:
-            for key, value in vars(entity).items():
-                setattr(obj, key, value)
-            self.session.commit()
-            return obj
-        return None
-
-    def delete(self, entity):
-        obj = self.get(entity.id)
-        if obj:
-            self.session.delete(obj)
-            self.session.commit()
-            return True
-        return False
-
-
-'''burger_repository = SQLAlchemyRepository(session, Burger)
-order_repository = SQLAlchemyRepository(session, Order)
-
-new_burger = Burger(name='Cheeseburger')
-new_burger2 = Burger(name='Cheeseburger')
+new_burger = BurgerDB(name='Cheeseburger')
+new_burger2 = BurgerDB(name='Cheeseburger')
 burger_repository.create(new_burger)
 burger_repository.create(new_burger2)
 
@@ -178,12 +169,12 @@ all_burgers = burger_repository.list()
 print(all_burgers)
 
 burger_to_update = burger_repository.get(new_burger.id)
-burger_to_update.name = 'Veggie Burger'
+burger_to_update.name = 'Veggie BurgerDB'
 burger_repository.update(burger_to_update)
 
 burger_repository.delete(burger_to_update)
 
-new_order = Order()
+new_order = OrderDB()
 print(new_order.burgers)
 order_repository.create(new_order)
 
@@ -198,3 +189,12 @@ print(all_burgers)
 print(order_repository.list())
 
 session.close()'''
+
+def toJSONable(dictionary: Dict[str, Any]) -> Dict[str, Any]:
+    for key, value in dictionary.items():
+        if isinstance(value, (datetime, time, date)):
+            dictionary[key] = str(value)
+        if isinstance(value, Decimal):
+            dictionary[key] = float(value)
+
+    return dictionary
