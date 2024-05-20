@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<Entities>
+  <Order>
+    <id>641d6cd8-64ee-4d01-832d-bd364d6502ca</id>
+    <client>0b20ddc1-0f2f-404a-9eda-4eb3fe2775bb</client>
+    <creation_time>2024-05-06 23:30:48.760007</creation_time>
+    <delivery_time>None</delivery_time>
+    <delivery_address>123 Main Street</delivery_address>
+    <courier>d11df454-2d0a-46d4-8941-27dd6b66a156</courier>
+    <items>74068562-cbcf-42cc-aa46-0b298d43821e,74068562-cbcf-42cc-aa46-0b298d43821e,</items>
+    <price>29.99</price>
+  </Order>
+  <Client>
+    <id>0b20ddc1-0f2f-404a-9eda-4eb3fe2775bb</id>
+    <name>David</name>
+    <phone>phone</phone>
+    <orders>641d6cd8-64ee-4d01-832d-bd364d6502ca,</orders>
+    <comments>None</comments>
+  </Client>
+  <Courier>
+    <id>d11df454-2d0a-46d4-8941-27dd6b66a156</id>
+    <name>Dave</name>
+    <orders>641d6cd8-64ee-4d01-832d-bd364d6502ca,</orders>
+  </Courier>
+  <Burger>
+    <id>74068562-cbcf-42cc-aa46-0b298d43821e</id>
+    <name>borgar</name>
+  </Burger>
+</Entities>
