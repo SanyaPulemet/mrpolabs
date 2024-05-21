@@ -1,0 +1,28 @@
+{
+  "Order": {
+      "id": "641d6cd8-64ee-4d01-832d-bd364d6502ca",
+      "client": "0b20ddc1-0f2f-404a-9eda-4eb3fe2775bb",
+      "creation_time": "2024-05-06 23:30:48.760007",
+      "delivery_time": "None",
+      "delivery_address": "123 Main Street",
+      "courier": "d11df454-2d0a-46d4-8941-27dd6b66a156",
+      "items": "74068562-cbcf-42cc-aa46-0b298d43821e,74068562-cbcf-42cc-aa46-0b298d43821e",
+      "price": 29.99
+    },
+    "Client": {
+      "id": "0b20ddc1-0f2f-404a-9eda-4eb3fe2775bb",
+      "name": "David",
+      "phone": "phone",
+      "orders": "641d6cd8-64ee-4d01-832d-bd364d6502ca,",
+      "comments": "None"
+    },
+    "Courier": {
+      "id": "d11df454-2d0a-46d4-8941-27dd6b66a156",
+      "name": "Dave",
+      "orders": "641d6cd8-64ee-4d01-832d-bd364d6502ca,"
+    },
+    "Burger": {
+      "id": "74068562-cbcf-42cc-aa46-0b298d43821e",
+      "name": "borgar"
+    }
+}
